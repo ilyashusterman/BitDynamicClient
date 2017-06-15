@@ -8,10 +8,15 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #232;
   height: 80px;
   padding: 10px;
   color: white;
+}
+.App-Bar {
+  position: relative;
+  top: 15px;
+  left: 200px;
 }
 
 .App-intro {

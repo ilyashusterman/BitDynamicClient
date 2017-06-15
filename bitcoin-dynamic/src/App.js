@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import {MuiThemeProvider} from "material-ui";
-import BottomNavigationBar from "./components/BottomNavigationBar";
-import AIDrawer from "./components/AIDrawer";
+import {MuiThemeProvider} from 'material-ui';
+import BottomNavigationBar from './components/BottomNavigationBar';
+import AIDrawer from './components/AIDrawer';
+import HeaderToolBar from './components/HeaderToolBar';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Needed for onTouchTap
@@ -14,11 +15,16 @@ class App extends Component {
     <MuiThemeProvider>
     <div>
       <div>
-        <div className="App-header">
+        <div className='App-header'>
           <h2>Welcome to Bitcoin</h2>
         </div>
       </div>
-          <AIDrawer/>
+      <div>
+        <HeaderToolBar />
+      </div>
+      <div  className='App-Bar'>
+        <AIDrawer/>
+      </div>
         <BottomNavigationBar />
     </div>
     </MuiThemeProvider>
