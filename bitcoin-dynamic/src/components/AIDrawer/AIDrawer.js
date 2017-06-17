@@ -4,7 +4,12 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RaisedButton';
+// import RaisedButton from 'material-ui/RaisedButton';
+import {FloatingActionButton} from "material-ui";
+import './AIDrawer.css'
+import {ContentAdd,ContentRemove} from "material-ui/svg-icons/index.es";
+
+
 
 export default class AIDrawer extends React.Component {
 
@@ -17,11 +22,10 @@ export default class AIDrawer extends React.Component {
 
     render() {
         return (
-            <div>
-                <RaisedButton
-                    label="Open AI Dashboard"
-                    onTouchTap={this.handleToggle}
-                />
+            <div className="AiDrwr">
+                <FloatingActionButton onTouchTap={this.handleToggle} >
+                    {this.state.open? <ContentRemove  />:  <ContentAdd/> }
+                </FloatingActionButton>
                 <Drawer width={300} openSecondary={true} open={this.state.open} >
                     <AppBar title="AI Bot" />
                     <h1>hello dashboard</h1>
