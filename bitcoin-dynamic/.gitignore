@@ -5,6 +5,7 @@
 /.idea
 /bitcoin-dynamic/.idea
 package-lock.json
+
 # testing
 /coverage
 
