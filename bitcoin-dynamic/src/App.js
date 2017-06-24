@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import {LARGE, SMALL} from 'material-ui/utils/withWidth';
 import {MuiThemeProvider} from 'material-ui';
 import AIDrawer from './components/ai_dashboard/AIDrawer.js';
-import HeaderToolBar from './components/Header';
+import HeaderToolBar from './components/header/Header';
 import PageBase from  './components/PageBase';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import './App.css'
@@ -30,34 +30,34 @@ class App extends Component {
         });
     }
 
-  render() {
-      let { navDrawerOpen } = this.state;
-      const paddingLeftDrawerOpen = 236;
+    render() {
+        let {navDrawerOpen} = this.state;
+        const paddingLeftDrawerOpen = 236;
 
-      const styles = {
-          header: {
-              paddingLeft: navDrawerOpen ? paddingLeftDrawerOpen : 0
-          },
-          container: {
-              margin: '80px 20px 20px 15px',
-              paddingLeft: navDrawerOpen && this.props.width !== SMALL ? paddingLeftDrawerOpen : 0
-          }
-      };
-    return (
-    <MuiThemeProvider>
+        const styles = {
+            header: {
+                paddingLeft: navDrawerOpen ? paddingLeftDrawerOpen : 0
+            },
+            container: {
+                margin: '80px 20px 20px 15px',
+                paddingLeft: navDrawerOpen && this.props.width !== SMALL ? paddingLeftDrawerOpen : 0
+            }
+        };
+        return (
+            <MuiThemeProvider>
 
-        <div>
-      <div>
-        <HeaderToolBar styles={styles.header}
-                handleChangeRequestNavDrawer={this.handleChangeRequestNavDrawer.bind(this)}/>
-      </div>
-      <PageBase title="Welcome to Bitualization">
-        <AIDrawer/>
-      </PageBase>
-            </div>
-    </MuiThemeProvider>
-    );
-  }
+                <div>
+                    <div>
+                        <HeaderToolBar styles={styles.header}
+                                       handleChangeRequestNavDrawer={this.handleChangeRequestNavDrawer.bind(this)}/>
+                    </div>
+                    <PageBase title="Welcome to Bitualization">
+                        <AIDrawer/>
+                    </PageBase>
+                </div>
+            </MuiThemeProvider>
+        );
+    }
 
 }
 
